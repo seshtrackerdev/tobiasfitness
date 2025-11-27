@@ -6,11 +6,34 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+:root {
+  --neon-green: #7cff4f;
+  --deep-purple: #3b1b6a;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Account for sticky header - desktop */
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 4rem; /* Smaller offset on mobile */
+  }
+}
+
+body {
+  @apply bg-[#050509] text-slate-100;
+  color-scheme: dark;
+}
+
+/* Ensure sections have proper scroll margins */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 3.5rem; /* Smaller margin on mobile */
   }
 }
